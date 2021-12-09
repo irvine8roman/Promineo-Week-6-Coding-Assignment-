@@ -71,34 +71,60 @@ class Game {
       this.players[0].playerCard = gameOne.deal();
       this.players[1].playerCard = gameOne.deal();
       if (this.players[0].playerCard.value > this.players[1].playerCard.value) {
+        console.log(
+          `Round ${i + 1}: Robot: ${this.players[0].playerCard.suit} of ${
+            this.players[0].playerCard.rank
+          } | Ninja: ${this.players[1].playerCard.suit} of ${
+            this.players[1].playerCard.rank
+          }`
+        );
         this.players[0].points = this.players[0].points + 1;
         console.log(`${this.players[0].name} wins round ${i + 1}`);
       } else if (
         this.players[0].playerCard.value < this.players[1].playerCard.value
       ) {
+        console.log(
+          `Round ${i + 1}: Robot: ${this.players[0].playerCard.suit} of ${
+            this.players[0].playerCard.rank
+          } | Ninja: ${this.players[1].playerCard.suit} of ${
+            this.players[1].playerCard.rank
+          }`
+        );
         this.players[1].points = this.players[1].points + 1;
         console.log(`${this.players[1].name} wins round ${i + 1}`);
       } else {
-        console.log("Tie!");
+        console.log(
+          `Round ${i + 1}: Robot: ${this.players[0].playerCard.suit} of ${
+            this.players[0].playerCard.rank
+          } | Ninja: ${this.players[1].playerCard.suit} of ${
+            this.players[1].playerCard.rank
+          }`
+        );
+        console.log(`Tie!`);
       }
     }
 
     if (this.players[0].points > this.players[1].points) {
       return console.log(
-        "Player One wins. Score: " +
+        "Robot wins. Score: " +
           this.players[0].points +
           " to " +
           this.players[1].points
       );
     } else if (this.players[0].points < this.players[1].points) {
       return console.log(
-        "Player Two Wins. Score: " +
+        "Ninja Wins. Score: " +
           this.players[1].points +
           " to " +
           this.players[0].points
       );
     } else {
-      return console.log("The game is a tie.");
+      return console.log(
+        "The game is a tie. " +
+          this.players[1].points +
+          " to " +
+          this.players[0].points
+      );
     }
 
     // TESTING THIS CODE ABOVE
